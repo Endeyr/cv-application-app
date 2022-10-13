@@ -9,11 +9,11 @@ export function Display() {
 				</div>
 				<div className="input-group mb-3">
 					<span className="input-group-text">Email</span>
-					<input type="text" className="form-control" />
+					<input type="email" className="form-control" />
 				</div>
 				<div className="input-group mb-3">
 					<span className="input-group-text">Phone Number</span>
-					<input type="text" className="form-control" />
+					<input type="tel" className="form-control" />
 				</div>
 			</section>
 			<section>
@@ -28,7 +28,7 @@ export function Display() {
 				</div>
 				<div className="input-group mb-3">
 					<span className="input-group-text">Graduation Date</span>
-					<input type="text" className="form-control" />
+					<input type="month" className="form-control" />
 				</div>
 			</section>
 			<section>
@@ -42,12 +42,15 @@ export function Display() {
 					<input type="text" className="form-control" />
 				</div>
 				<div className="input-group mb-3">
-					<span className="input-group-text">Task</span>
+					<span className="input-group-text">Duties</span>
+					<input type="text" className="form-control" />
+					<input type="text" className="form-control" />
 					<input type="text" className="form-control" />
 				</div>
 				<div className="input-group mb-3">
 					<span className="input-group-text">Dates of Employment</span>
-					<input type="text" className="form-control" />
+					<input type="date" className="form-control" />
+					<input type="date" className="form-control" />
 				</div>
 			</section>
 			<button type="button" className="btn btn-primary">
