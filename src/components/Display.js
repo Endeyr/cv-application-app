@@ -1,5 +1,18 @@
+import { useState } from 'react'
+import uniqid from 'uniqid'
+
 export function Display() {
-	const onSubmit = (e) => {
+	const [infos, setInfos] = useState([])
+
+	function handleChange(e) {
+		setInfos((prevState) => ({
+			...prevState,
+			id: uniqid(),
+			[e.target.name]: e.target.value,
+		}))
+	}
+
+	function onSubmit(e) {
 		e.preventDefault()
 	}
 
@@ -11,13 +24,25 @@ export function Display() {
 					<label htmlFor="name" className="input-group-text">
 						Name
 					</label>
-					<input type="text" className="form-control" />
+					<input
+						type="text"
+						className="form-control"
+						name="name"
+						value={infos.name || ''}
+						onChange={handleChange}
+					/>
 				</div>
 				<div className="input-group mb-3">
 					<label htmlFor="email" className="input-group-text">
 						Email
 					</label>
-					<input type="email" className="form-control" />
+					<input
+						type="email"
+						className="form-control"
+						name="email"
+						value={infos.email || ''}
+						onChange={handleChange}
+					/>
 				</div>
 				<div className="input-group mb-3">
 					<label htmlFor="phone" className="input-group-text">
@@ -26,17 +51,47 @@ export function Display() {
 					<input
 						type="tel"
 						className="form-control"
-						pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+						name="number"
+						value={infos.number || ''}
+						onChange={handleChange}
 					/>
 				</div>
 				<div className="input-group mb-3">
 					<label htmlFor="address" className="input-group-text">
 						Mailing Address
 					</label>
-					<input type="text" className="form-control" placeholder="street" />
-					<input type="text" className="form-control" placeholder="city" />
-					<input type="text" className="form-control" placeholder="state" />
-					<input type="text" className="form-control" placeholder="zipcode" />
+					<input
+						type="text"
+						className="form-control"
+						placeholder="street"
+						name="street"
+						value={infos.street || ''}
+						onChange={handleChange}
+					/>
+					<input
+						type="text"
+						className="form-control"
+						placeholder="city"
+						name="city"
+						value={infos.city || ''}
+						onChange={handleChange}
+					/>
+					<input
+						type="text"
+						className="form-control"
+						placeholder="state"
+						name="state"
+						value={infos.state || ''}
+						onChange={handleChange}
+					/>
+					<input
+						type="text"
+						className="form-control"
+						placeholder="zipcode"
+						name="zip"
+						value={infos.zip || ''}
+						onChange={handleChange}
+					/>
 				</div>
 			</section>
 			<section>
@@ -45,19 +100,37 @@ export function Display() {
 					<label htmlFor="school" className="input-group-text">
 						School Name
 					</label>
-					<input type="text" className="form-control" />
+					<input
+						type="text"
+						className="form-control"
+						name="school"
+						value={infos.school || ''}
+						onChange={handleChange}
+					/>
 				</div>
 				<div className="input-group mb-3">
 					<label htmlFor="degree" className="input-group-text">
 						Field of Study
 					</label>
-					<input type="email" className="form-control" />
+					<input
+						type="text"
+						className="form-control"
+						name="degree"
+						value={infos.degree || ''}
+						onChange={handleChange}
+					/>
 				</div>
 				<div className="input-group mb-3">
 					<label htmlFor="graduation" className="input-group-text">
 						Graduation Date
 					</label>
-					<input type="month" className="form-control" />
+					<input
+						type="month"
+						className="form-control"
+						name="graduationYear"
+						value={infos.graduationYear || ''}
+						onChange={handleChange}
+					/>
 				</div>
 			</section>
 			<section>
@@ -66,28 +139,70 @@ export function Display() {
 					<label htmlFor="company" className="input-group-text">
 						Company Name
 					</label>
-					<input type="text" className="form-control" />
+					<input
+						type="text"
+						className="form-control"
+						name="company"
+						value={infos.company || ''}
+						onChange={handleChange}
+					/>
 				</div>
 				<div className="input-group mb-3">
 					<label htmlFor="title" className="input-group-text">
 						Title
 					</label>
-					<input type="text" className="form-control" />
+					<input
+						type="text"
+						className="form-control"
+						name="title"
+						value={infos.title || ''}
+						onChange={handleChange}
+					/>
 				</div>
 				<div className="input-group mb-3">
 					<label htmlFor="duties" className="input-group-text">
 						Duties
 					</label>
-					<input type="text" className="form-control" />
-					<input type="text" className="form-control" />
-					<input type="text" className="form-control" />
+					<input
+						type="text"
+						className="form-control"
+						name="duties1"
+						value={infos.duties1 || ''}
+						onChange={handleChange}
+					/>
+					<input
+						type="text"
+						className="form-control"
+						name="duties2"
+						value={infos.duties2 || ''}
+						onChange={handleChange}
+					/>
+					<input
+						type="text"
+						className="form-control"
+						name="duties3"
+						value={infos.duties3 || ''}
+						onChange={handleChange}
+					/>
 				</div>
 				<div className="input-group mb-3">
 					<label htmlFor="employment" className="input-group-text">
 						Dates of Employment
 					</label>
-					<input type="date" className="form-control" />
-					<input type="date" className="form-control" />
+					<input
+						type="date"
+						className="form-control"
+						name="employmentMonth"
+						value={infos.employmentMonth || ''}
+						onChange={handleChange}
+					/>
+					<input
+						type="date"
+						className="form-control"
+						name="employmentYear"
+						value={infos.employmentYear || ''}
+						onChange={handleChange}
+					/>
 				</div>
 			</section>
 			<div className="d-flex justify-content-between">
